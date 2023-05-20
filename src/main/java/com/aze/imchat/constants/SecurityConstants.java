@@ -3,7 +3,7 @@ package com.aze.imchat.constants;
 /**
  * 权限相关通用常量
  * 
- * @author ruoyi
+ * @author aze
  */
 public class SecurityConstants
 {

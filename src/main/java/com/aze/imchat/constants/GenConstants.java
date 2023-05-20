@@ -3,7 +3,7 @@ package com.aze.imchat.constants;
 /**
  * 代码生成通用常量
  * 
- * @author ruoyi
+ * @author aze
  */
 public class GenConstants
 {

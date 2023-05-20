@@ -3,7 +3,7 @@ package com.aze.imchat.constants;
 /**
  * Token的Key常量
  * 
- * @author ruoyi
+ * @author aze
  */
 public class TokenConstants
 {

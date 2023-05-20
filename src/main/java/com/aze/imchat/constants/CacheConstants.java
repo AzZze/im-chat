@@ -3,7 +3,7 @@ package com.aze.imchat.constants;
 /**
  * 缓存常量信息
  * 
- * @author ruoyi
+ * @author aze
  */
 public class CacheConstants
 {

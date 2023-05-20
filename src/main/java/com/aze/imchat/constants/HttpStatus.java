@@ -3,7 +3,7 @@ package com.aze.imchat.constants;
 /**
  * 返回状态码
  * 
- * @author ruoyi
+ * @author aze
  */
 public class HttpStatus
 {
