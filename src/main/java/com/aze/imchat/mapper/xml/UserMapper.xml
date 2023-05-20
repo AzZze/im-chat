@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aze.imchat.mapper.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.aze.imchat.entity.User">
+        <id column="user_id" property="userId" />
+        <result column="user_name" property="userName" />
+        <result column="nick_name" property="nickName" />
+        <result column="email" property="email" />
+        <result column="password" property="password" />
+        <result column="gender" property="gender" />
+        <result column="avatar" property="avatar" />
+        <result column="personal_signature" property="personalSignature" />
+        <result column="birthday" property="birthday" />
+        <result column="mobile" property="mobile" />
+        <result column="last_login_time" property="lastLoginTime" />
+        <result column="activate" property="activate" />
+        <result column="activate_time" property="activateTime" />
+        <result column="channel" property="channel" />
+        <result column="secret_mobile" property="secretMobile" />
+        <result column="device" property="device" />
+        <result column="device_id" property="deviceId" />
+        <result column="device_model" property="deviceModel" />
+        <result column="ip" property="ip" />
+        <result column="status" property="status" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,53 @@
+package com.aze.imchat.enums;
+
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@ToString
+
+public enum ResultCodeEnum {
+
+    SUCCESS(true, 200,"成功"),
+    UNKNOWN_REASON(false, 20001, "未知错误"),
+
+    BAD_SQL_GRAMMAR(false, 21001, "sql语法错误"),
+    JSON_PARSE_ERROR(false, 21002, "json解析异常"),
+    PARAM_ERROR(false, 21003, "参数不正确"),
+
+
+
+
+    FETCH_ACCESSTOKEN_FAILD(false, 23003, "获取accessToken失败"),
+    FETCH_USERINFO_ERROR(false, 23004, "获取用户信息失败"),
+    LOGIN_ERROR(false, 23005, "登录失败"),
+
+    COMMENT_EMPTY(false, 24006, "评论内容必须填写"),
+
+
+    CODE_ERROR(false, 28000, "验证码错误"),
+
+    LOGIN_PHONE_ERROR(false, 28009, "手机号码不正确"),
+    LOGIN_MOBILE_ERROR(false, 28001, "账号不正确"),
+    LOGIN_PASSWORD_ERROR(false, 28008, "密码不正确"),
+    LOGIN_DISABLED_ERROR(false, 28002, "该用户已被禁用"),
+    REGISTER_MOBLE_ERROR(false, 28003, "手机号已被注册"),
+    LOGIN_AUTH(false, 28004, "需要登录"),
+    LOGIN_ACL(false, 28005, "没有权限"),
+    SMS_SEND_ERROR(false, 28006, "短信发送失败"),
+    SMS_SEND_ERROR_BUSINESS_LIMIT_CONTROL(false, 28007, "短信发送过于频繁");
+
+
+    private Boolean success;
+
+    private Integer code;
+
+    private String message;
+
+    ResultCodeEnum(Boolean success, Integer code, String message) {
+        this.success = success;
+        this.code = code;
+        this.message = message;
+    }
+}
+

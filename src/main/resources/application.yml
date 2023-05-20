@@ -1,0 +1,52 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8088
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/im_chat?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root1234
+  redis:
+    host: 123.60.158.103
+    port: 6379
+    password: linze
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    username: 1146963860@qq.com
+    password: fdscfkpuyvpgijcc
+    port: 587
+    properties:
+      mail:
+        #配置SSL 加密工厂
+        smtp:
+          ssl:
+            #本地测试，先放开ssl
+            enable: false
+            required: false
+          #开启debug模式，这样邮件发送过程的日志会在控制台打印出来，方便排查错误
+        debug: true
+
+
+knife4j:
+  enable: true
+  openapi:
+    title: ImChat 接口文档
+    description: "`ImChat"
+    email: aze@11.com
+    concat: 八一菜刀
+    url:
+    version: v4.0
+    license: Apache 2.0
+    license-url:
+    terms-of-service-url:
+    group:
+      login:
+        group-name: 登录注册
+        api-rule: package
+        api-rule-resources:
+          - com.aze.imchat.controller
+
+
+
