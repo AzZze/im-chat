@@ -2,7 +2,6 @@ package com.aze.imchat.controller;
 
 
 import com.aze.imchat.entity.LoginUser;
-import com.aze.imchat.entity.MailRequest;
 import com.aze.imchat.entity.dto.LoginFormDto;
 import com.aze.imchat.entity.dto.RegisterUserDto;
 import com.aze.imchat.service.SendEmailService;
@@ -26,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/login")
-public class UserController {
+public class LoginController {
 
     @Autowired
     private TokenService tokenService;
