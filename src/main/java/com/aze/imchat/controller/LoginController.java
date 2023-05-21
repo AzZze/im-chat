@@ -41,6 +41,8 @@ public class LoginController {
 
         LoginUser loginUser = userService.login(loginForm);
         return tokenService.createToken(loginUser);
+
+
     }
 
     @PostMapping("registerByEmail")
