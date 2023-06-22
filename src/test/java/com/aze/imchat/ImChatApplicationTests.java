@@ -23,7 +23,9 @@ class ImChatApplicationTests {
     void contextLoads() {
         List<String> tables = new ArrayList<>();
 
-        tables.add("t_user");
+//        tables.add("t_user");
+        tables.add("t_contact");
+        tables.add("t_audit");
         FastAutoGenerator.create("jdbc:mysql://localhost:3306/im_chat?useUnicode=true" +
                                 "&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull" +
                                 "&useSSL=true&serverTimezone=Asia/Shanghai",

@@ -109,4 +109,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         save(user);
         return R.ok().message("注册成功");
     }
+
+    @Override
+    public User getUserByEmailOrMobile(String userIdentify) {
+
+       return lambdaQuery()
+                .eq(User::getEmail, userIdentify)
+                .or()
+                .eq(User::getMobile, userIdentify).one();
+    }
 }

@@ -20,4 +20,6 @@ public interface UserService extends IService<User> {
     LoginUser login(LoginFormDto loginForm);
 
     R registerByEmail(RegisterUserDto registerUserDto);
+
+    User getUserByEmailOrMobile(String userIdentify);
 }
