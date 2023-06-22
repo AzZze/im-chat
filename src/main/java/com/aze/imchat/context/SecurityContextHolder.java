@@ -2,6 +2,7 @@ package com.aze.imchat.context;
 
 import com.alibaba.ttl.TransmittableThreadLocal;
 import com.aze.imchat.constants.SecurityConstants;
+import com.aze.imchat.entity.LoginUser;
 import com.aze.imchat.text.Convert;
 import com.aze.imchat.utils.StringUtils;
 
@@ -63,6 +64,10 @@ public class SecurityContextHolder {
     public static void setUserName(String username)
     {
         set(SecurityConstants.DETAILS_USERNAME, username);
+    }
+
+    public static LoginUser getLoginUser(){
+        return get(SecurityConstants.LOGIN_USER,LoginUser.class);
     }
 
     public static String getUserKey()

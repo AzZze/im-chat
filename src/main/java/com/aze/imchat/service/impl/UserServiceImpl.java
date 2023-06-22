@@ -118,4 +118,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .or()
                 .eq(User::getMobile, userIdentify).one();
     }
+
+    @Override
+    public User getUserById(Long id) {
+
+
+        return getById(id);
+    }
 }

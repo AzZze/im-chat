@@ -22,4 +22,6 @@ public interface UserService extends IService<User> {
     R registerByEmail(RegisterUserDto registerUserDto);
 
     User getUserByEmailOrMobile(String userIdentify);
+
+    User getUserById(Long id);
 }

@@ -1,6 +1,7 @@
 package com.aze.imchat.service;
 
 import com.aze.imchat.entity.Audit;
+import com.aze.imchat.utils.R;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface AuditService extends IService<Audit> {
 
+    R friendApplyList(Long userId);
 }
