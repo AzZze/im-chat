@@ -1,14 +1,17 @@
 package com.aze.imchat.service.impl;
 
 import cn.hutool.core.convert.Convert;
+import cn.hutool.core.lang.Assert;
 import com.aze.imchat.constants.UserConstants;
 import com.aze.imchat.entity.LoginUser;
 import com.aze.imchat.entity.User;
 import com.aze.imchat.entity.dto.LoginFormDto;
 import com.aze.imchat.entity.dto.RegisterUserDto;
+import com.aze.imchat.entity.vo.UserFriendApplyVo;
 import com.aze.imchat.exceptions.ServiceException;
 import com.aze.imchat.mapper.UserMapper;
 import com.aze.imchat.service.UserService;
+import com.aze.imchat.utils.AESUtil;
 import com.aze.imchat.utils.MD5Utils;
 import com.aze.imchat.utils.R;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -124,5 +127,24 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
 
         return getById(id);
+    }
+
+    @Override
+    public R findFriend(String userIdentify) {
+        User friend = getUserByEmailOrMobile(userIdentify);
+        Assert.notNull(friend,"联系人不存在");
+        UserFriendApplyVo userFriendApplyVo = new UserFriendApplyVo();
+
+        String encrypt;
+        try {
+            encrypt=  AESUtil.encrypt("userId",friend.getUserId().toString());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        userFriendApplyVo.setUserIdentify(encrypt);
+        userFriendApplyVo.setNickName(friend.getNickName());
+        userFriendApplyVo.setAvatar(friend.getAvatar());
+        return R.ok().data("data",userFriendApplyVo);
     }
 }

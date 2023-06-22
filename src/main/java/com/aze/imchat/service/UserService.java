@@ -24,4 +24,7 @@ public interface UserService extends IService<User> {
     User getUserByEmailOrMobile(String userIdentify);
 
     User getUserById(Long id);
+
+    R findFriend(String userIdentify);
+
 }

@@ -4,6 +4,7 @@ package com.aze.imchat.controller;
 import com.aze.imchat.constants.SecurityConstants;
 import com.aze.imchat.context.SecurityContextHolder;
 import com.aze.imchat.entity.LoginUser;
+import com.aze.imchat.entity.param.ApplyFriendParam;
 import com.aze.imchat.service.AuditService;
 import com.aze.imchat.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,14 @@ public class AuditController {
     @Autowired
     private AuditService auditService;
 
+
+
+    @PostMapping
+    public R applyFriend(@RequestBody ApplyFriendParam applyFriendParam){
+
+        return auditService.applyFriend(applyFriendParam);
+
+    }
 
     @GetMapping("getFriendApplyList")
     private R friendApplyList(){

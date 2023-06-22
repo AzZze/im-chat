@@ -29,26 +29,8 @@ import org.springframework.stereotype.Service;
 public class ContactServiceImpl extends ServiceImpl<ContactMapper, Contact> implements ContactService {
 
 
-    @Autowired
-    private UserService userService;
-    @Override
-    public R findFriend(String userIdentify) {
-        User friend = userService.getUserByEmailOrMobile(userIdentify);
-        Assert.notNull(friend,"联系人不存在");
-        UserFriendApplyVo userFriendApplyVo = new UserFriendApplyVo();
 
-        String encrypt;
-        try {
-            encrypt=  AESUtil.encrypt("userId",friend.getUserId().toString());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
-        userFriendApplyVo.setUserIdentify(encrypt);
-        userFriendApplyVo.setNickName(friend.getNickName());
-        userFriendApplyVo.setAvatar(friend.getAvatar());
-        return R.ok().data("data",userFriendApplyVo);
-    }
 
 
 }

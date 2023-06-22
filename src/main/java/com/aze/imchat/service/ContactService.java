@@ -14,6 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ContactService extends IService<Contact> {
 
-    R findFriend(String userIdentify);
+
 
 }

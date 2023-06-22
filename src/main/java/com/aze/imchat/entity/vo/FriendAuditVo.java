@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class FriendAuditVo {
 
+    private Long auditId;
+
     private String userIdentify;
     //昵称
     private String nickName;
