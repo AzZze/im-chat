@@ -26,7 +26,12 @@ public class AuditController {
     private AuditService auditService;
 
 
-
+    /**
+     * 申请朋友
+     *
+     * @param applyFriendParam 应用朋友参数
+     * @return {@link R}
+     */
     @PostMapping
     public R applyFriend(@RequestBody ApplyFriendParam applyFriendParam){
 
@@ -34,6 +39,11 @@ public class AuditController {
 
     }
 
+    /**
+     * 朋友申请列表
+     *
+     * @return {@link R}
+     */
     @GetMapping("getFriendApplyList")
     private R friendApplyList(){
         LoginUser loginUser = SecurityContextHolder.getLoginUser();

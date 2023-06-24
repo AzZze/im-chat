@@ -14,6 +14,13 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    /**
+     * 查找朋友
+     *
+     * @param userIdentify 用户识别
+     * @return {@link R}
+     */
     @GetMapping("findFriend")
     public R findFriend(@RequestParam String userIdentify){
 
